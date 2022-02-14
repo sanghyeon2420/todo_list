@@ -1,15 +1,59 @@
-.Template {
-    padding-top: 20px;
-    max-height: 100vh;
+.container {
+    width: 450px;
+    height: 620px;
+    background: white;
+    margin: 0 auto;
+    margin-top: 3%;
+    box-shadow: 1px 2px 5px 3px gainsboro;
+
+}
+
+.header {
+    padding: 20px 20px 20px 20px;
+    
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+
+    border-bottom: 1px solid #e9ecef;
+
+    
+}
+
+.date_area {
+    display: flex;
+    color: #333;
+    font-family: "Bellota";
+}
+
+.left_col {
+    margin-right: 5px;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.right_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.month_area {
+    font-family: "Roboto";
+    font-size: 14px;
+}
+
+.year_area {
+    line-height: 1;
 }
 
 .title {
-    width:90vw;
-    margin-left: auto;
-    margin-right: auto;
+    color: #50e3a4;
+    font: italic 700 35px "Roboto Condensed";
+    letter-spacing: -0.5px;
+  }
 
-    padding-bottom: 20px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #6c567b;
-}
+
+

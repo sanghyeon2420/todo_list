@@ -1,37 +1,37 @@
 .TodoItem {
-    margin-left: auto;
-    margin-right: auto;
-
+    
     border-radius: 5px;
-    box-shadow: 1px 2px 5px 1px #f67280;
+    box-shadow: 1px 2px 5px 1px #50e3a4;
     padding: 1rem;
     display: flex;
     align-items: center;
 }
 
 .TodoItem + .TodoItem {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .content {
     cursor: pointer;
+    align-items: center;
     flex: 1;
     display: flex;
-    align-items: center;
 }
 
 .content svg {
+    margin-right: 5px;
     font-size: 1.5rem;
-    color:#f67280;
+    color: #50e3a4;
 }
 
 .content .text {
+    
     margin-left: 0.5rem;
     flex: 1;
 }
 
 .content.checked .text {
-    color:#6c567b;
+    color: #6c567b;
     text-decoration: line-through;
     cursor: pointer;
     opacity: 0.6;
