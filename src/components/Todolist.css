@@ -1,4 +1,5 @@
 .Todolist {
+    display: flex;
     height: 416px;
     padding: 20px 20px 20px 20px;
     overflow-y: auto;

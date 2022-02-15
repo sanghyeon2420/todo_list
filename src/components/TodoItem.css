@@ -1,24 +1,24 @@
 .TodoItem {
-    
+    display: flex;
     border-radius: 5px;
     box-shadow: 1px 2px 5px 1px #50e3a4;
     padding: 1rem;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
-.TodoItem + .TodoItem {
-    margin-top: 10px;
-}
+
 
 .content {
-
+    display: flex;
     align-items: center;
     flex: 1;
     display: flex;
 }
 
 .content>.checkBtn svg {
+    display: flex;
     cursor: pointer;
     margin-right: 5px;
     font-size: 1.5rem;
@@ -26,12 +26,13 @@
 }
 
 .content .text {
-    
+    display: flex;
     margin-left: 0.5rem;
     flex: 1;
 }
 
 .content.checked .text {
+    display: flex;
     color: #6c567b;
     text-decoration: line-through;
     cursor: pointer;
@@ -39,6 +40,7 @@
 }
 
 .content>.isLike svg {
+    display: flex;
     cursor: pointer;
     margin-right: 5px;
     font-size: 1.5rem;
@@ -52,6 +54,7 @@
 }
 
 .content>.isLike.important svg {
+    display: flex;
     cursor: pointer;
     margin-right: 5px;
     font-size: 1.5rem;
@@ -59,8 +62,14 @@
 }
 
 .content>.removeBtn svg {
+    display: flex;
     cursor: pointer;
     margin-right: 5px;
     font-size: 1.5rem;
     color: hsla(0,100%,71%,.79);
+}
+
+
+.TodoItem.important {
+  order: -1;
 }

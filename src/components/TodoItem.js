@@ -5,8 +5,8 @@ import './TodoItem.css';
 const TodoItem = ({ todo, onCheck, onRemove, onImportant }) => {
     const { id, text, checked, important } = todo;
     return (
-        <div className='TodoItem'>
-            <div className={`content ${checked ? 'checked' : ''}`}>
+        <div className={`TodoItem ${important ? 'important' : ''}`}>
+            <div className={`content ${checked ? 'checked' : ''} `}>
                 <div className='checkBtn'>
                     {checked ? <MdCheckBox onClick={() => {
                         onCheck(id);

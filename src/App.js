@@ -28,7 +28,7 @@ const App = () => {
     },
     {
       id: 3,
-      text: "MySQL",
+      text: "MySQL 공부하기",
       checked: true,
       important: true
     }
