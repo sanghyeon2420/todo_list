@@ -62,7 +62,7 @@ const App = () => {
   const onCheck = (id) => {
     setTodos(todos =>
       todos.map(todo =>
-        todo.id === id ? { ...todo, important: !todo.important } : todo
+        todo.id === id ? { ...todo, checked: !todo.checked } : todo
       )
     );
   }
@@ -70,7 +70,7 @@ const App = () => {
   const onImportant = (id) => {
     setTodos(todos =>
       todos.map(todo =>
-        todo.id === id ? { ...todo, checked: !todo.checked } : todo
+        todo.id === id ? { ...todo, important: !todo.important } : todo
       )
     );
   }
