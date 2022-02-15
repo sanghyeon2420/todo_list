@@ -30,13 +30,13 @@ const App = () => {
   ]);
 
   const onInsertTodo = (text) => {
-    if(text===""){
+    if (text === "") {
       return alert("할 일을 입력해주세요.");
     } else {
       const todo = {
         id: nextId,
         text,
-        checked:false
+        checked: false
       }
 
       setTodos(todos => todos.concat(todo));
@@ -44,19 +44,26 @@ const App = () => {
     }
   }
 
+  const onRemove = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id));
+  }
+
   const onCheck = (id) => {
     setTodos(todos =>
       todos.map(todo =>
-        todo.id === id ? {...todo, checked: !todo.checked} : todo
-        )
+        todo.id === id ? { ...todo, checked: !todo.checked } : todo
+      )
     );
   }
 
+  // const getTodoLength = () => {
+  //   if(todos.checked===false
+  // }
   return (
 
     <Template todoLength={todos.length}>
       <TodoInsert onInsertTodo={onInsertTodo} />
-      <Todolist todos={todos} onInsertTodo={onInsertTodo} onCheck={onCheck} />
+      <Todolist todos={todos} onInsertTodo={onInsertTodo} onCheck={onCheck} onRemove={onRemove} />
     </Template>
   );
 }

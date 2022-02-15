@@ -18,7 +18,7 @@ const TodoInsert = ({ onInsertTodo }) => {
     return (
         <form className='TodoInsert' onSubmit={onSubmit}>
             <input type='text' placeholder='추가할 일을 입력하세요.'  value={value} onChange={onChange}></input>
-            <button><MdAddCircle /></button>
+            <button className='insertBtn'><MdAddCircle /></button>
         </form>
 
     );

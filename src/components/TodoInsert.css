@@ -30,7 +30,7 @@ input {
 
   }
 
-  svg {
+  .insertBtn svg {
     color: #50e3a4;
     font-size: 23px;
   }

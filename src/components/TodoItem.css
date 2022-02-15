@@ -18,7 +18,7 @@
     display: flex;
 }
 
-.content svg {
+.content>.checkBtn svg {
     margin-right: 5px;
     font-size: 1.5rem;
     color: #50e3a4;
@@ -35,4 +35,16 @@
     text-decoration: line-through;
     cursor: pointer;
     opacity: 0.6;
+}
+
+.content>.isLike svg {
+    margin-right: 5px;
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+.content>.removeBtn svg {
+    margin-right: 5px;
+    font-size: 1.5rem;
+    color: hsla(0,100%,71%,.79);
 }
