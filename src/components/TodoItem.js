@@ -2,8 +2,8 @@ import React from 'react';
 import { MdCheckBox, MdCheckBoxOutlineBlank, MdRemoveCircleOutline, MdStar } from 'react-icons/md';
 import './TodoItem.css';
 
-const TodoItem = ({ todo, onCheck, onRemove }) => {
-    const { id, text, checked } = todo;
+const TodoItem = ({ todo, onCheck, onRemove, onImportant }) => {
+    const { id, text, checked, important } = todo;
     return (
         <div className='TodoItem'>
             <div className={`content ${checked ? 'checked' : ''}`}>
@@ -15,8 +15,10 @@ const TodoItem = ({ todo, onCheck, onRemove }) => {
                     }} />}
                 </div>
                 <div className='text'><b>{text}</b></div>
-                <div className='isLike'>
-                    <MdStar />
+                <div className={`isLike ${important ? 'important' : ''}`}>
+                    <MdStar onClick={()=>{
+                        onImportant(id);
+                    }}/>
                 </div>
                 <div className='removeBtn'>
                     <MdRemoveCircleOutline onClick={() => {

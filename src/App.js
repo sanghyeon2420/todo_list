@@ -1,42 +1,53 @@
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
+import Swal from 'sweetalert2';
 import './App.css';
 import Template from './components/Template';
-import Todolist from './components/Todolist';
 import TodoInsert from './components/TodoInsert';
+import Todolist from './components/Todolist';
 
 let nextId = 4;
 
 const App = () => {
+
+  
 
 
   const [todos, setTodos] = useState([
     {
       id: 1,
       text: "리액트 공부하기",
-      checked: true
+      checked: false,
+      important: false
     },
     {
       id: 2,
       text: "Spring Framework 공부하기",
-      checked: true
+      checked: true,
+      important: false
     },
     {
       id: 3,
       text: "MySQL 공부하기",
-      checked: false
+      checked: true,
+      important: true
     }
 
   ]);
 
   const onInsertTodo = (text) => {
     if (text === "") {
-      return alert("할 일을 입력해주세요.");
+      return Swal.fire({
+        text: '추가할 일을 입력하세요.',
+        icon: 'error',
+        confirmButtonText: '확인'
+      });
     } else {
       const todo = {
         id: nextId,
         text,
-        checked: false
+        checked: false,
+        important: false
       }
 
       setTodos(todos => todos.concat(todo));
@@ -51,19 +62,24 @@ const App = () => {
   const onCheck = (id) => {
     setTodos(todos =>
       todos.map(todo =>
+        todo.id === id ? { ...todo, important: !todo.important } : todo
+      )
+    );
+  }
+
+  const onImportant = (id) => {
+    setTodos(todos =>
+      todos.map(todo =>
         todo.id === id ? { ...todo, checked: !todo.checked } : todo
       )
     );
   }
 
-  // const getTodoLength = () => {
-  //   if(todos.checked===false
-  // }
   return (
 
     <Template todoLength={todos.length}>
       <TodoInsert onInsertTodo={onInsertTodo} />
-      <Todolist todos={todos} onInsertTodo={onInsertTodo} onCheck={onCheck} onRemove={onRemove} />
+      <Todolist todos={todos} onInsertTodo={onInsertTodo} onCheck={onCheck} onRemove={onRemove} onImportant={onImportant}/>
     </Template>
   );
 }

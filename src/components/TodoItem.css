@@ -12,13 +12,14 @@
 }
 
 .content {
-    cursor: pointer;
+
     align-items: center;
     flex: 1;
     display: flex;
 }
 
 .content>.checkBtn svg {
+    cursor: pointer;
     margin-right: 5px;
     font-size: 1.5rem;
     color: #50e3a4;
@@ -38,12 +39,27 @@
 }
 
 .content>.isLike svg {
+    cursor: pointer;
     margin-right: 5px;
     font-size: 1.5rem;
     color: #ccc;
 }
 
+.content>.isLike svg:hover {
+    margin-right: 5px;
+    font-size: 1.5rem;
+    color: #f0f351;
+}
+
+.content>.isLike.important svg {
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 1.5rem;
+    color: #f0f351;
+}
+
 .content>.removeBtn svg {
+    cursor: pointer;
     margin-right: 5px;
     font-size: 1.5rem;
     color: hsla(0,100%,71%,.79);
